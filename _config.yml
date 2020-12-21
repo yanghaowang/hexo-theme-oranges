@@ -15,16 +15,21 @@
 
 # enable: 是否开启相应功能，可选true || false
 
+homepage:
+  greetings: Welcome to Yanghao's Homepage!
+  intro: I am an applied economist with research interests in industrial organization, consumer economics, and development economics. I am enthused about learning newly developed econometric and machine learning models and adapting proper methods to solve real-world economic problems.
+  background: I currently work in the Global Data Insight and Analytics at Ford Motor Company. I hold a Ph.D. degree in Applied Economics from the University of Minnesota and a M.S. degree in Agricultural Economics with Minor in Statistics from the University of Tennessee.
+
 # 网站图标
 favicon:
   enable: true
-  icon: /images/favicon.png
-  touch_icon: /images/favicon.png
+  icon: /images/isle_icon.png
+  touch_icon: /images/isle_icon.png
 
 # 用户头像与昵称
 avatar:
-  author_photo: /images/avatar.png
-  author_nickname: Oranges
+  author_photo: /images/isle_icon.png
+  author_nickname: Yanghao Wang
   path: /
 
 # Google 分析
@@ -32,8 +37,8 @@ avatar:
 # 注册Google分析账号，在管理/创建媒体资源/选择网站/填写相关信息后得到跟踪Id，一般格式为UA-xxxxxxx-x
 # 如之前已有注册账号，在管理/跟踪信息/跟踪代码/找到跟踪ID，一般格式为UA-xxxxxxx-x
 gtag:
-  enable: false
-  gtagkey: UA-xxxxxxx-x
+  enable: true
+  gtagkey: G-HQF7RSRVHX
 
 # 文章评论系统
 comments:
@@ -66,8 +71,8 @@ comments:
     # https://disqus.com/
     # 注册账号，获取shortname.disqus.com，shortname为你定义的唯一name
     # 例：我注册配置完毕后的网址为zxcxxxx.disqus.com，zxcxxxx即为shortname
-    enable: false
-    shortname: zxcxxxx
+    enable: true
+    shortname: https-yanghaowang-github-io
 
 # 主题页面导航栏
 navbar:
@@ -77,8 +82,13 @@ navbar:
     path: /
     key: home
   -
-    name: Archives
+    name: Research
     enable: true
+    path: /research/
+    key: research
+  -
+    name: Archives
+    enable: false
     path: /archives/
     key: archives
   -
@@ -93,7 +103,7 @@ navbar:
     key: tags
   -
     name: Friends
-    enable: true
+    enable: false
     path: /friends/
     key: friends
   -
@@ -132,30 +142,34 @@ footer:
     # name: 名称
     # icon: 图标，目前仅支持IconFont部分图标
     # path: 地址
+    # -
+    #   name: github
+    #   icon: github
+    #   path: https://github.com/yanghaowang # https://github.com/zchengsite/hexo-theme-oranges
     -
-      name: github
-      icon: github
-      path: https://github.com/zchengsite/hexo-theme-oranges
+      name: linkedin
+      icon: linkedin
+      path: https://www.linkedin.com/in/yanghaowang
     -
       name: email
       icon: envelope
-      path: 
-    -
-      name: facebook
-      icon: facebooksquare
-      path:
-    -
-      name: twitter
-      icon: twitter
-      path:
-    -
-      name: wechat
-      icon: wechat
-      path:
-    -
-      name: weibo
-      icon: weibo
-      path:
+      path: mailto:wyangh90@gamil.com
+    # -
+    #   name: facebook
+    #   icon: facebooksquare
+    #   path:
+    # -
+    #   name: twitter
+    #   icon: twitter
+    #   path:
+    # -
+    #   name: wechat
+    #   icon: wechat
+    #   path:
+    # -
+    #   name: weibo
+    #   icon: weibo
+    #   path:
     -
       # rss需安装 hexo-generator-feed 插件
       # 具体参照https://github.com/hexojs/hexo-generator-feed
@@ -165,13 +179,13 @@ footer:
 
   more:
     -
-      name: Copyright © Oranges 2020
-      path: https://github.com/zchengsite/hexo-theme-oranges
-    -
-      name: Theme by Oranges | Powered by Hexo
-      path: https://github.com/zchengsite/hexo-theme-oranges
+      name: © 2018-2020 Yanghao Wang. All Rights Reserved.
+      # path: / # https://yanghaowang.github.io/
+    # -
+    #   name: Hosted on GitHub | Powered by Hexo | Theme by Oranges
+    #   path: / # https://github.com/zchengsite/hexo-theme-oranges
 
 # 文章搜索
 search:
-  enable: true
+  enable: false
   placeholder: 

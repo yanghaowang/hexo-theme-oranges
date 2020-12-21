@@ -1,6 +1,7 @@
 <head>
   <meta charset="utf-8">
-  <meta name="author" content="zchengsite, 1451426471@qq.com" />
+  <!-- template is created by "zchengsite"<1451426471@qq.com> -->
+  <meta name="author" content="Yanghao Wang" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <% if(is_home() && page.current > 1){ %>
     <meta name="robots" content="noindex" />
@@ -30,7 +31,7 @@
       title = "friend"
     }
   %>
-  <title><% if (title) { %><%= __(title) %> <% if (page.tag) { %> : <%= page.tag %><% } %> <% if (page.category) { %> : <%= page.category %><% } %> | <% } %><%= config.title %></title>
+  <title><% if (title) { %><%= __(title) %> <% if (page.tag) { %> : <%= page.tag %><% } %> <% if (page.category) { %> : <%= page.category %><% } %><% } %></title>
 
   <% if (theme.favicon.enable){ %>
     <link rel="apple-touch-icon" href="<%- theme.favicon.touch_icon %>">
@@ -62,5 +63,10 @@
       gtag('config', '<%- theme.gtag.gtagkey %>');
     </script>
   <% } %>
+
+  <!-- Site Verification (Begin) -->
+  <meta name="google-site-verification" content="JjXbgMsnj0fxvl9a8Srz8H3mqG7a5WH302GAZAceyHw" />
+  <meta name="msvalidate.01" content="83FCCA6F2323CE633A05D6A4C1D2116A" />
+  <!-- Site Verification (End) -->
 
 </head>

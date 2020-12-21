@@ -1,5 +1,25 @@
 <div class="container index">
+  <div class="intro">
+    <h1 style="padding-bottom: 5%;">
+      <%- theme.homepage.greetings %>
+    </h1>
+    <div>
+      <img style="width: 200px; float: left; padding-right: 20px; padding-bottom: 10px;" src="images/YWang_jmphoto_76kb.jpg" alt="ProfilePhoto">
+    </div>
+    <div>
+      <p style="text-align: justify; opacity: 0.8; font-size: 1.6rem; padding: 10px 0px 10px 0px;">
+        <%- theme.homepage.intro %>
+        <br>
+        <br>
+        <%- theme.homepage.background %>
+      </p>
+    </div>
+  </div>
   <div class="post-list">
+    <h1 style="padding-top: 10%;">
+      Recent Posts
+    </h1>
+    <p><br></p>
     <!-- 遍历渲染文章 -->
     <% page.posts.forEach(function(item) { %>
       <div class="post-item" title="<%- item.title %>">
@@ -28,5 +48,9 @@
     <% if(page.next !== 0){ %>
       <a href="<%- url_for(page.next_link)%>"><i class="iconfont icon-angleright"></i></a>
     <% } %>
+    <p><br></p>
+    <h4>
+      <a href="<%= config.root %>archives">See All Posts</a>
+    </h4>
   </nav>
 </div>

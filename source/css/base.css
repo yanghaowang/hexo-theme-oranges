@@ -4,9 +4,9 @@
 }
 
 html, body {
-  font-size: 10px;
-  letter-spacing: 0.01rem;
-  font-family: Consolas, "Liberation Mono", Menlo, Monaco, "Source Han Sans CN", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif
+  font-size: 12px;
+  letter-spacing: 0.02rem;
+  font-family: "Calibri", Consolas, "Liberation Mono", Menlo, Monaco, "Source Han Sans CN", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif
 }
 
 body.hidden {
@@ -46,7 +46,7 @@ a {
 }
 
 a:hover {
-  color: black;
+  color: orange;
 }
 
 .flex-container {
@@ -63,53 +63,56 @@ a:hover {
 }
 
 .container {
-  width: 50%;
+  width: 100%;
+  max-width: 850px;
   margin: 0 auto;
 }
 
 .index .post-list,
+.index .intro,
 .friend-index .friend-list,
 .archives .post-list,
 .tag-index .tag-list,
 .about-index .markdown-body {
-  padding: 0 40px;
+  padding: 0;
 }
 
 .category-index .category-list {
   padding: 0 110px;
 }
 
-@media (max-width: 888px) {
+@media (max-width: 850px) {
   .container {
-    width: 90%;
+    width: 100%;
   }
   .index .post-list,
+  .index .intro,
   .friend-index .friend-list,
   .archives .post-list,
   .tag-index .tag-list,
   .about-index .markdown-body {
     padding: 0;
   }
+
   .category-index .category-list {
     padding: 0 40px;
   }
-  .post-catalog {
-    opacity: 0;
-    z-index: -1;
-  }
+}
+
+@media (max-width: 1050px) {
+  /* # Remove back to top button*/
   .back-to-top {
     opacity: 0;
     z-index: -1;
+    padding-right: 0px;
   }
 }
 
-@media (max-width: 1200px) and (min-width: 887px) {
-  .index .post-list,
-  .friend-index .friend-list,
-  .archives .post-list,
-  .tag-index .tag-list,
-  .about-index .markdown-body {
-    padding: 0 20px;
+@media (max-width: 1200px) {
+  /* # Remove Float Content */
+  .post-catalog {
+    opacity: 0;
+    z-index: -1;
   }
 }
 
@@ -227,21 +230,9 @@ a:hover {
   border-radius: 3px;
 }
 
-@media (max-width: 888px) {
-  .navbar ul li {
-    margin: 0 10px;
-  }
-}
-
-@media (max-width: 390px) {
-  .navbar ul li {
-    margin: 0 3px;
-  }
-}
-
 .post-navigation {
   font-size: 1.5rem;
-  padding: 20px 90px;
+  padding: 20px 20px;
   text-align: right;
   color: #666;
 }
@@ -254,17 +245,6 @@ a:hover {
   padding: 0 10px;
 }
 
-@media (max-width: 888px) {
-  .post-navigation {
-    padding: 20px 0;
-  }
-}
-
-@media (max-width: 1200px) and (min-width: 887px) {
-  .post-navigation {
-    padding: 20px 20px;
-  }
-}
 
 .footer {
   padding-top: 30px;
@@ -355,9 +335,9 @@ a:hover {
 
 .post-details .post-title {
   text-align: center;
-  font-size: 2.2rem;
+  font-size: 2.4rem;
   font-weight: 600;
-  color: #666;
+  color: black; /*#666;*/
   padding-bottom: 10px;
 }
 
@@ -395,20 +375,12 @@ a:hover {
   padding: 0 10px;
 }
 
-@media (max-width: 768px) {
-  .time-m-d {
-    margin-right: 15px;
-  }
-  .tag-details .time-m-d, .archives .time-m-d {
-    margin: 0 15px;
-  }
-}
 
 .post-catalog {
   position: absolute;
   top: calc(290px + 88px + 30px);
-  right: 50px;
-  width: calc(20% - 50px);
+  right: 0px;
+  width: calc(20% - 80px);
   font-size: 1.4rem;
   padding-left: 10px;
 }
@@ -590,4 +562,32 @@ a:hover {
 
 .local-search-empty {
   font-size: 1.6rem;
+}
+
+/* comment */
+.comment {
+  color: black;
+  /* opacity: 0.8; */
+}
+
+.comment:hover {
+  color: orange;
+  /* opacity: 1;
+  background-color: grey;
+  border-color: grey; */
+}
+
+/* image hover */
+.no-underline {
+  text-decoration: none;
+  outline: none; 
+  border: 0px none transparent;
+}
+
+.img-hov {
+  transition: all .2s ease-in-out;
+}
+.img-hov:hover {
+  transform: translateY(-3px);
+  transition: all .2s ease-in-out;
 }

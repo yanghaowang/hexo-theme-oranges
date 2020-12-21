@@ -2,9 +2,7 @@
 
 <div class="container tag-details">
   <div class="content-title">
-    <h2>
-      <span><%- page.tag %></span>
-    </h2>
+    <span class="icon iconfont">&#xecdd; # <%- page.tag %></span>
   </div>
   <% page.posts.sort('date', -1).each(function(item) { %>
     <div class="post-list">
@@ -24,5 +22,9 @@
     <% if(page.next !== 0){ %>
       <a href="<%- url_for(page.next_link)%>"><i class="iconfont icon-angleright"></i></a>
     <% } %>
+    <p><br></p>
+    <h4>
+      <a href="<%= config.root %>tags">Back to Tags</a>
+    </h4>
   </nav>
 </div>
