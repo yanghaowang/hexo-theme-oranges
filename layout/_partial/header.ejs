@@ -1,11 +1,15 @@
 <head>
   <meta charset="utf-8">
-  <!-- template is created by "zchengsite"<1451426471@qq.com> -->
+  <!-- Template is created by "zchengsite"<1451426471@qq.com> -->
   <meta name="author" content="Yanghao Wang" />
+
+  <!-- Mobile Specific Metas -->
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
   <% if(is_home() && page.current > 1){ %>
     <meta name="robots" content="noindex" />
   <% } %>
+  
   <%
     var title = page.title;
 
@@ -31,12 +35,41 @@
       title = "friend"
     }
   %>
+  
   <title><% if (title) { %><%= __(title) %> <% if (page.tag) { %> : <%= page.tag %><% } %> <% if (page.category) { %> : <%= page.category %><% } %><% } %></title>
 
   <% if (theme.favicon.enable){ %>
     <link rel="apple-touch-icon" href="<%- theme.favicon.touch_icon %>">
     <link rel="icon" href="<%- theme.favicon.icon %>">
   <% } %>
+
+  <!-- Info Feed for Search Engine -->
+  <meta property="og:url" content="<%= url %>" />
+  <meta property="og:site_name" content="<%= config.title %>" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="<%= title %>" />
+
+  <% if (is_page()|is_post()){ %>
+    <meta name="description" content="<%= page.description %>">
+  <% } else if (page.content){ %>
+    <meta name="description" content="<%= strip_html(page.content).replace(/\n/g, " ").replace(/^\s*/, '').replace(/\s*$/, '').substring(0, 150) %>">
+  <% } else { %>
+    <meta name="description" content="<%= config.description %>">
+  <% } %>
+
+
+  <!-- Info Feed for Twitter -->
+  <meta name="twitter:url" content="<%= url %>" />
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="<%= title %>">
+  <% if (is_page()|is_post()){ %>
+    <meta name="twitter:description" content="<%= page.description %>">
+  <% } else if (page.content){ %>
+    <meta name="twitter:description" content="<%= strip_html(page.content).replace(/\n/g, " ").replace(/^\s*/, '').replace(/\s*$/, '').substring(0, 150) %>">
+  <% } else { %>
+    <meta name="twitter:description" content="<%= config.description %>">
+  <% } %>
+  
 
   <!-- Raleway-Font -->
   <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
