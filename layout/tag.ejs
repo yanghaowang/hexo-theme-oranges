@@ -1,8 +1,8 @@
 <!-- 标签详情页，展示某个标签下的文章列表，url形式：https://yoursite/tags/某个标签/ -->
 
 <div class="container tag-details">
-  <div class="content-title">
-    <span class="icon iconfont">&#xecdd; # <%- page.tag %></span>
+  <div style="font-size: 1.6rem; margin-bottom: 20px;">
+    <span class="icon iconfont">&#xecdd; </span><span># <%- page.tag %></span>
   </div>
   <% page.posts.sort('date', -1).each(function(item) { %>
     <div class="post-list">
